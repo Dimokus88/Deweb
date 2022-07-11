@@ -25,6 +25,7 @@ services:
      - "link_rpc=https://raw.githubusercontent.com/Dimokus88/deweb/main/state_sync"
      - "SHIFT=2000"
      - "SNAP_RPC=evad96t7hpfrp8mnjor6usblo8.praetor.ingress.d3akash.cloud:32704"
+     - "autodelegate=yes"
 #====================================   
     expose:
       - port: 80
