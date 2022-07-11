@@ -1,0 +1,77 @@
+---
+version: "2.0"
+
+services:
+  app:
+    image: dimokus88/universe:0.0.2
+    
+    env:
+#1.Раздел часной информации, неделитесь даннмы из этого раздела!
+     - "my_root_password=" # пароль root для подключения по ssh
+     - "MONIKER=" #Имя ноды (Если нетрудно, укажите в имени ноды Akash, например:DimokusAkash). Node name (If it is not difficult, specify Akash in the node name, for example:DimokusAkash). 
+     - "MNEMONIC=" # seed phrase from the Deweb wallet. seed фраза от кошелька Deweb.
+     - "LINK_KEY=" # link to the posted pirv-validator_key.json (direct download). It will also work from other Cosmos-based testnets. ссылка на размещенный pirv-validator_key.json (прямое скачивание). Подойдет и от других тестнетов на базе Cosmos.
+#==================================================================
+#2.Раздел переменных для работы ноды
+     - "binary=dewebd "
+     - "vers=v0.2"
+     - "genesis=https://raw.githubusercontent.com/deweb-services/deweb/main/genesis.json"
+     - "folder=.deweb"
+     - "denom=udws"
+     - "chain=deweb-testnet-1"
+     - "gitrep=https://github.com/deweb-services/deweb.git"
+     - "gitfold=deweb"
+     - "link_peer=https://raw.githubusercontent.com/Dimokus88/deweb/main/PEER"
+     - "link_rpc=https://raw.githubusercontent.com/Dimokus88/deweb/main/state_sync"
+     - "SHIFT=2000"
+     - "SNAP_RPC=evad96t7hpfrp8mnjor6usblo8.praetor.ingress.d3akash.cloud:32704"
+#====================================   
+    expose:
+      - port: 80
+        as: 80
+        to:
+          - global: true
+      - port: 22
+        as: 22
+        to:
+          - global: true
+      - port: 26656
+        as: 26656
+        to:
+          - global: true
+      - port: 26657
+        as: 26657
+        to:
+          - global: true
+      - port: 26658
+        as: 26658
+        to:
+          - global: true
+        
+profiles:
+  compute:
+    app:
+      resources:
+        cpu:
+          units: 2.0
+        memory:
+          size: 3Gi
+        storage:
+          size: 40Gi
+         
+  placement:
+    akash: 
+      attributes:
+        host: akash
+      signedBy:
+        anyOf:
+            
+      pricing:
+        app:
+          denom: uakt
+          amount: 10000
+deployment:
+  app:
+    akash:
+      profile: app
+      count: 1 
