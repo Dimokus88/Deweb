@@ -16,7 +16,7 @@ Before you start - subscribe to our news channels:
 </div>
 <div align="center">
   
-| [Discord Deweb](https://discord.gg/vWA6srU7cA) | [Explorer Deweb](https://Deweb.explorers.guru/) | [Site Deweb](https://deweb.services/) | [Twitter Deweb](https://twitter.com/dewebservices) |
+| [Discord Deweb](https://discord.gg/vWA6srU7cA) | [Explorer Deweb](https://dws.explorers.guru/) | [Site Deweb](https://deweb.services/) | [Twitter Deweb](https://twitter.com/dewebservices) |
 |:--:|:--:|:--:|:--:|
   
 </div>
