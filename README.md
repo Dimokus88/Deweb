@@ -73,7 +73,7 @@ We are waiting for the completion of the deployment.
 
 </div>
 
-* In the ```SHELL``` tab, run the command```cat /root/.dewebd/config/priv_validator_key.json```, save the answer in a file```priv_validator_key``` with extension```.json```.
+* In the ```SHELL``` tab, run the command```cat /root/.deweb/config/priv_validator_key.json```, save the answer in a file```priv_validator_key``` with extension```.json```.
 
 <div align="center">
   
@@ -196,7 +196,7 @@ We are waiting for the completion of the deployment.
   
 </div>
 
-* Во вкладке ```SHELL``` выполните команду ```cat /root/.dewebd/config/priv_validator_key.json```, ответ сохраните в файле ```priv_validator_key``` с расширением ```.json```.
+* Во вкладке ```SHELL``` выполните команду ```cat /root/.deweb/config/priv_validator_key.json```, ответ сохраните в файле ```priv_validator_key``` с расширением ```.json```.
 
 <div align="center">
   
