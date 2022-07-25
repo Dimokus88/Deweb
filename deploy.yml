@@ -3,16 +3,15 @@ version: "2.0"
 
 services:
   app:
-    image: dimokus88/universe:0.0.2
-    
+    image: ubuntu:latest
     env:
-#1.Private information section, do not share data from this section!Раздел часной информации, неделитесь даннмы из этого раздела!
+#1.Раздел часной информации, неделитесь даннмы из этого раздела!
      - "my_root_password=" # пароль root для подключения по ssh
-     - "MONIKER=" #Имя ноды (Если нетрудно, укажите в имени ноды Akash, например:DimokusAkash). Node name (If it is not difficult, specify Akash in the node name, for example:DimokusAkash). 
-     - "MNEMONIC=" # seed phrase from the Deweb wallet. seed фраза от кошелька Deweb.
+     - "MONIKER=Test" # имя ноды
+     - "MNEMONIC=" # seed фраза от тестового кошелька с defund
      - "LINK_KEY=" # link to the posted pirv-validator_key.json (direct download). It will also work from other Cosmos-based testnets. ссылка на размещенный pirv-validator_key.json (прямое скачивание). Подойдет и от других тестнетов на базе Cosmos.
 #==================================================================
-#2.Section of variables for node operation.Раздел переменных для работы ноды.
+#2.Раздел переменных для работы ноды
      - "binary=dewebd"
      - "vers=v0.2"
      - "genesis=https://raw.githubusercontent.com/deweb-services/deweb/main/genesis.json"
@@ -21,12 +20,14 @@ services:
      - "chain=deweb-testnet-1"
      - "gitrep=https://github.com/deweb-services/deweb.git"
      - "gitfold=deweb"
-     - "link_peer=https://raw.githubusercontent.com/Dimokus88/deweb/main/PEER"
-     - "link_rpc=https://raw.githubusercontent.com/Dimokus88/deweb/main/state_sync"
+     - "addrbook=https://raw.githubusercontent.com/StakeTake/guidecosmos/main/DWS/deweb-testnet-1/addrbook.json"
      - "SHIFT=2000"
-     - "SNAP_RPC=evad96t7hpfrp8mnjor6usblo8.praetor.ingress.d3akash.cloud:32704"
-     - "autodelegate=yes"
-#====================================   
+     - "SNAP_RPC=http://deweb.stake-take.com:26657"
+    command:
+      - "bash"
+      - "-c"
+    args:
+      - 'apt-get update ; apt-get upgrade -y ; apt-get install -y  curl ; curl -s  https://raw.githubusercontent.com/Dimokus88/universe/main/main.sh | bash ; sleep infinity'
     expose:
       - port: 80
         as: 80
@@ -44,10 +45,6 @@ services:
         as: 26657
         to:
           - global: true
-      - port: 26658
-        as: 26658
-        to:
-          - global: true
         
 profiles:
   compute:
@@ -56,10 +53,11 @@ profiles:
         cpu:
           units: 2.0
         memory:
-          size: 3Gi
+          size: 4Gi
         storage:
           size: 40Gi
-         
+        
+        
   placement:
     akash: 
       attributes:
