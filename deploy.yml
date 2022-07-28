@@ -64,9 +64,7 @@ profiles:
   placement:
     akash: 
       attributes:
-        host: akash
-      signedBy:
-        anyOf:
+
             
       pricing:
         app:
