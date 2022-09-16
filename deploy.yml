@@ -16,7 +16,7 @@ services:
       - "gitrep=https://github.com/deweb-services/deweb.git"
       - "gitfold=deweb"
       - "SHIFT=4000"
-      - "SNAP_RPC=http://31.44.6.80:26657"  
+      - "SNAP_RPC=http://62.171.148.163:26657"  
     command:
       - "bash"
       - "-c"
