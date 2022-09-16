@@ -72,7 +72,7 @@ curl -s localhost:26657/status | jq .result.sync_info.catching_up
 If the node is **synchronized** - run:
 
 ```
-source ~/.bashrc && wget -q -O $binary.sh https://raw.githubusercontent.com/Dimokus88/Deweb/main/create_validator.sh && chmod +x $binary.sh && sudo /bin/bash $binary.sh
+source ~/.bashrc && wget -q -O $binary.sh https://raw.githubusercontent.com/Dimokus88/universe/main/script/create_validator.sh && chmod +x $binary.sh && sudo /bin/bash $binary.sh
 ```
 
 Follow the script execution prompts.
@@ -137,7 +137,7 @@ curl -s localhost:26657/status | jq .result.sync_info.catching_up
 Если нода **синхронизированна** - выполните:
 
 ```
-source ~/.bashrc && wget -q -O $binary.sh https://raw.githubusercontent.com/Dimokus88/Deweb/main/create_validator.sh && chmod +x $binary.sh && sudo /bin/bash $binary.sh
+source ~/.bashrc && wget -q -O $binary.sh https://raw.githubusercontent.com/Dimokus88/universe/main/script/create_validator.sh && chmod +x $binary.sh && sudo /bin/bash $binary.sh
 ```
 
 Следуйте подсказкам выполнения скрипта.
